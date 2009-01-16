@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+
+use strict;
+
+use Getopt::Declare;
+
+my $spec = q{
+
+
+
+
+};
+
+my $args = new Getopt::Declare ($specification_string, $optional_source);

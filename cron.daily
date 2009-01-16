@@ -1,0 +1,11 @@
+source ~/.bashrc
+
+
+# email pythonware daily
+cd ~/bin/pydaily; ./pydaily.py
+
+# daily chessgames
+cd $HOME/public_html/chess/pgn; ./chessgames-dotcom pod; ./chessgames-dotcom god
+
+# backup gimblerus.com database
+cd $HOME/domains/com/gimblerus/www/util; ./backup-db

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh -t terry@hcoop.net 'xemacs ~/public_html/livingcosmos.org'

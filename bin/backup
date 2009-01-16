@@ -1,0 +1,17 @@
+#!/bin/bash -x
+
+
+
+SRC_DIR=/home/metaperl/mydocs
+DST_DIR='terry@hcoop.net:public_html'
+
+
+cd $SRC_DIR
+rsync --verbose  --progress --stats --compress --rsh=/usr/local/bin/ssh \
+      --recursive --times --perms --links --delete \
+      --exclude-from=bin/backup.exc --rsh=/usr/bin/ssh \
+      --copy-links \
+      ./.bashrc ./.xemacs/* ./* $DST_DIR
+
+
+

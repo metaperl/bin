@@ -1,0 +1,8 @@
+LOGFILE=$HOME/procmail/log.log
+VERBOSE=off
+LOGABSTRACT=off
+EXITCODE=
+TRAP=$HOME/perl/hax/Mail-Procmail-Filter-TBONE/script/sample.pl
+
+:0:
+$HOME/procmail/mail

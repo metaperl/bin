@@ -1,0 +1,43 @@
+AsciiDoc DocBook XSL Stylesheets Notes
+======================================
+
+PDF generation from AsciiDoc generated DocBook using FOP plus DocBook XSL
+Stylesheets.
+
+- FOP 0.95beta.
+- DocBook XSL Stylesheets version 1.74.0.
+
+Output file customisation is achieved by tweaking the DocBook XSL
+stylesheets.  I've tried to keep customization to a minimum and
+confine it to the separate XSL driver files in the distribution
+`./docbook-xsl/` directory (see the User Guide for details).
+
+To polish some rough edges I've written some patches for the DocBook
+XSL stylesheets -- you don't need them but they're documented below
+and included in the distribution `./docbook-xsl/` directory.
+
+
+Manually upgrading Debian to the latest DocBook XSL stylesheets
+---------------------------------------------------------------
+The DocBook XSL Stylesheets distribution is just a directory full of
+text files and you can switch between releases by changing the
+directory name in the system XML catalog.
+
+To upgrade to the latest docbook-xsl stylesheets without having to
+wait for the Debian `docbook-xsl` package:
+
+- Download the latest docbook-xsl tarball from
+  http://sourceforge.net/projects/docbook/.
+
+- Unzip the tarball to `/usr/share/xml/docbook/stylesheet/`:
+
+  $ cd /usr/share/xml/docbook/stylesheet
+  $ sudo tar -xzf /tmp/docbook-xsl-1.72.0.tar.gz
+  
+- Edit `/etc/xml/docbook-xsl.xml` catalog and replace occurences of
+  the current stylesheets directory with the new one (in our example
+  it would be `/usr/share/xml/docbook/stylesheet/docbook-xsl-1.72.0`.
+
+  $ cd /etc/xml/
+  $ sudo cp -p docbook-xsl.xml docbook-xsl.xml.ORIG
+  $ sudo vi docbook-xsl.xml

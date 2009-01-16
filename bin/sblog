@@ -1,0 +1,3 @@
+#!/bin/bash -x
+
+xemacs -nw /home/terry/domains/org/livingcosmos/blog/data/synchronicity/journal

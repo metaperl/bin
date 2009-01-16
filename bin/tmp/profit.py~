@@ -1,0 +1,10 @@
+
+refs = { 35 : 14, 100 : 40, 500 : 200 }
+    
+
+for refcount, cost in refs.items():
+    ads_per_day = 10
+    monthly_income = refcount * ads_per_day * 30
+    print refcount, "refs yields", monthly_income, "per month"
+
+

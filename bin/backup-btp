@@ -1,0 +1,9 @@
+#!/bin/bash -x
+
+# biotropic protocol
+
+CD='/home/metaperl/mydocs/metaphysics/fruitarian/btp'
+FILES="ME.png  death-life-death.png btp-cover.jpg  btp.tex index.html"
+DIR='terry@hcoop.net:public_html/biotrophic-protocol'
+cd $CD
+rsync -avz $FILES $DIR

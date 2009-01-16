@@ -1,0 +1,3 @@
+#!/bin/bash -x
+
+chicken-setup -proxy http://webproxy.ny.jpmorgan.com:8000 $1

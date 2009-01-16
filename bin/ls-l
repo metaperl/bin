@@ -1,0 +1,13 @@
+total 17
+-rwxr-xr-x    1 metaperl None          329 Nov 12 08:06 bs.pl
+-rwxr-xr-x    1 metaperl None          229 Nov  9 01:44 bs.pl~
+-rwxr-xr-x    1 metaperl None         1298 Nov  8 03:57 chessgames-dotcom
+-rwxrwxrwx    1 metaperl None         6677 Nov 27 04:18 desift
+-rw-r--r--    1 metaperl None         1521 Nov 26 13:12 desift.usage
+drwxr-xr-x+   2 metaperl None            0 Nov 12 17:10 gerbold
+-rw-r--r--    1 metaperl None            0 Nov 27 04:20 ls-l
+drwxr-xr-x+   2 metaperl None            0 Nov 10 03:58 psql
+-rw-r--r--    1 metaperl None          375 Nov  8 03:57 tempfile.pgn
+-rwxr-xr-x    1 metaperl None          460 Nov  7 09:57 upload-cpan.pl
+-rwxr-xr-x    1 metaperl None          102 Nov  7 04:57 xemacs.bat
+-rw-r--r--    1 metaperl None          103 Nov  7 04:56 xemacs.bat~

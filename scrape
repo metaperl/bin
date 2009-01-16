@@ -1,0 +1,3 @@
+#!/bin/bash -x
+
+wget --continue --mirror --convert-links --backup-converted --html-extension $1
