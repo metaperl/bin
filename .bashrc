@@ -100,3 +100,9 @@ export PATH=$PREFIX/asciidoc:$PATH
 #
 
 export PYTHONPATH=$HOME/lib/python:$PYTHONPATH
+
+
+#
+
+export PATH=$HOME/binn:$PATH
+export PS1="[\u@\h] [\w] "
