@@ -1,4 +1,0 @@
-rm ~/public_html/.tmp/*
-mv ~/procmail/* /tmp
-
-
