@@ -5,17 +5,14 @@ use strict;
 
 use Tie::IxHash;
 
+use local::lib '~/.ssh';
+use MySSH;
+
 
 my %user;
 my $user  = Tie::IxHash->new
     (
-      'li2-168.members.linode.com'  => 'schemelab',
-     'natasha.regents.state.oh.us'  => 'tbrannon',
-
-     'lnc.usc.edu'                 => 'brannon',
-     'perlmonk.org'                => 'metaperl',
- 
-
+     %MySSH::user
     ) ;
 
 
