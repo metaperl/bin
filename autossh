@@ -4,7 +4,7 @@
 # Uploads your id_rsa.pub to the specified host, wrapped for readability
 
 USER=tbrannon
-HOSTNAME=natasha.regents.state.oh.us
+HOSTNAME=cvs.vwh.net
 
 if [ ! -r "${HOME}/.ssh/id_rsa.pub" ]; then
  ssh-keygen -t rsa -b 2048
