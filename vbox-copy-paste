@@ -1,0 +1,4 @@
+#!/bin/bash -x
+
+autocutsel -selection PRIMARY   &
+autocutsel -selection CLIPBOARD &
