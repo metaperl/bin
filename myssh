@@ -63,11 +63,12 @@ my $c = mainloop;
 my $host = $user->Keys($c);
 my $sshstr = ssh_string($host) ;
 
+
 print $sshstr, "\n" ;
 if ($ENV{DISPLAY}) {
-    `xterm -title '$sshstr' -e 'ssh -Y $sshstr' &` ;
+    system "xterm -title '$sshstr' -e 'ssh -Y $sshstr' &" ;
 } else {
-    exec 'ssh', '-C', '-A', '-X', $sshstr ;
+    exec 'ssh', '-C', '-A', '-X', $sshstr, '&' ;
 }
 
 
