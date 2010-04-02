@@ -1,0 +1,6 @@
+#!/bin/bash -x
+
+
+vbox-copy-paste
+vbox-mount-c-drive
+

@@ -5,17 +5,14 @@ use strict;
 
 use Tie::IxHash;
 
+use local::lib '~/.ssh';
+use MySSH;
+
 
 my %user;
 my $user  = Tie::IxHash->new
     (
-      'li2-168.members.linode.com'  => 'schemelab',
-     'natasha.regents.state.oh.us'  => 'tbrannon',
-
-     'lnc.usc.edu'                 => 'brannon',
-     'perlmonk.org'                => 'metaperl',
- 
-
+     %MySSH::user
     ) ;
 
 
@@ -66,11 +63,12 @@ my $c = mainloop;
 my $host = $user->Keys($c);
 my $sshstr = ssh_string($host) ;
 
+
 print $sshstr, "\n" ;
 if ($ENV{DISPLAY}) {
-    `xterm -title '$sshstr' -e 'ssh -Y $sshstr' &` ;
+    system "xterm -title '$sshstr' -e 'ssh -Y $sshstr' &" ;
 } else {
-    exec 'ssh', '-C', '-A', '-X', $sshstr ;
+    exec 'ssh', '-C', '-A', '-X', $sshstr, '&' ;
 }
 
 

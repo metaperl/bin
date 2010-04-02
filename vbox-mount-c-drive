@@ -1,0 +1,1 @@
+mount -t vboxsf C_DRIVE /mnt/win-c
