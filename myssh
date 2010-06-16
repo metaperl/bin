@@ -5,7 +5,7 @@ use strict;
 
 use Tie::IxHash;
 
-use local::lib '~/.ssh';
+use local::lib '~/bin';
 use MySSH;
 
 
