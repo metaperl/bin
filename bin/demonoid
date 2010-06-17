@@ -1,5 +1,0 @@
-#!/bin/bash -x
-
-FILE="$HOME/bin/Torrent downloaded from Demonoid.com.txt"
-
-cp "$FILE" .
