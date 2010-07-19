@@ -1,108 +1,137 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# base-files version 3.9-3
 
-# If running interactively, then:
-if [ "$PS1" ]; then
+# To pick up the latest recommended .bashrc content,
+# look in /etc/defaults/etc/skel/.bashrc
 
-    # don't put duplicate lines in the history. See bash(1) for more options
-    # export HISTCONTROL=ignoredups
+# Modifying /etc/skel/.bashrc directly will prevent
+# setup from updating it.
 
-    # check the window size after each command and, if necessary,
-    # update the values of LINES and COLUMNS.
-    #shopt -s checkwinsize
+# The copy in your home directory (~/.bashrc) is yours, please
+# feel free to customise it to create a shell
+# environment to your liking.  If you feel a change
+# would be benificial to all, please feel free to send
+# a patch to the cygwin mailing list.
 
+# User dependent .bashrc file
 
-    # some more ls aliases
-    #alias ll='ls -l'
-    #alias la='ls -A'
-    #alias l='ls -CF'
+# Environment Variables
+# #####################
 
-    # set a fancy prompt
-    PS1='\u@\h:\w\$ '
+# TMP and TEMP are defined in the Windows environment.  Leaving
+# them set to the default Windows temporary directory can have
+# unexpected consequences.
+unset TMP
+unset TEMP
 
-    # If this is an xterm set the title to user@host:dir
-    #case $TERM in
-    #xterm*)
-    #    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-    #    ;;
-    #*)
-    #    ;;
-    #esac
+# Alternatively, set them to the Cygwin temporary directory
+# or to any other tmp directory of your choice
+# export TMP=/tmp
+# export TEMP=/tmp
 
-    # enable programmable completion features (you don't need to enable
-    # this, if it's already enabled in /etc/bash.bashrc).
-    #if [ -f /etc/bash_completion ]; then
-    #  . /etc/bash_completion
-    #fi
-fi
+# Or use TMPDIR instead
+# export TMPDIR=/tmp
 
-export EDITOR=xemacs
+# Shell Options
+# #############
 
-alias meta='xemacs ~/public_html/metaperl.com'
-alias gopugs='xemacs ~/haskell/pugs/pugs'
-alias gnus='xemacs -f gnus'
-alias gimble='xemacs -f gimble'
-alias live='xemacs ~/public_html/livingcosmos.org'
-alias smlx="xemacs ~/public_html/livingcosmos.org/sml/harper-sml/excs.sml"
-alias alz='xemacs ~/perl/hax/Alzabo-Playground/scripts'
+# See man bash for more options...
 
+# Don't wait for job termination notification
+# set -o notify
 
+# Don't use ^D to exit
+# set -o ignoreeof
 
+# Use case-insensitive filename globbing
+# shopt -s nocaseglob
 
-export BIVIO=~/perl/dl/Bivio-bOP-2.49/
-export GIMBLE=$HOME/public_html/gimblerus.com
-export GIMBLE_SRC=$GIMBLE/src/perl
-export BCONF=$GIMBLE/bconf/gimble.bconf
-#export BCONF=$BIVIO/petshop.bconf
+# Make bash append rather than overwrite the history on disk
+# shopt -s histappend
 
-# set PATH so it includes user's private bin if it exists
-if [ -d ~/bin ] ; then
-    PATH=~/bin:"${PATH}"
-fi
-
-export DBI_CONF=/home/terry/.dbi.conf
-
-export PERL5LIB=~/install/lib:~/install/share/perl/perlver
-
-PATH=~/bin/asciidoc-7.0.0:$PATH
-
-export SVN_SSH='ssh -l metaperl'
-
-# 
-
-ulimit -Sv 500000
-ulimit -Su 50
-
-# CVS
-
-cvs_developer=metaperl
-cvs_project=seamstress
-
-export CVSROOT_SEAMSTRESS=:ext:$cvs_developer@cvs.sourceforge.net:/cvsroot/$cvs_project
-
-cvs_project=cgi-prototype
-export CVSROOT_CGIP=:ext:$cvs_developer@cvs.sourceforge.net:/cvsroot/$cvs_project
-
-#
-export PREFIX=$HOME/install
-
-#
-export FORREST_HOME=$HOME/domains/org/livingcosmos/dev/apache-forrest
-export PATH=$PATH:$FORREST_HOME/bin
-
-# 
-
-export PATH=$PREFIX/bin:$PATH
-export PATH=$PREFIX/zopehome/bin:$PATH
-export PATH=$PREFIX/asciidoc:$PATH
-
-#
-
-export PYTHONPATH=$HOME/lib/python:$PYTHONPATH
+# When changing directory small typos can be ignored by bash
+# for example, cd /vr/lgo/apaache would find /var/log/apache
+# shopt -s cdspell
 
 
-#
+# Completion options
+# ##################
 
-export PATH=$HOME/binn:$PATH
-export PS1="[\u@\h] [\w] "
+# These completion tuning parameters change the default behavior of bash_completion:
+
+# Define to access remotely checked-out files over passwordless ssh for CVS
+# COMP_CVS_REMOTE=1
+
+# Define to avoid stripping description in --option=description of './configure --help'
+# COMP_CONFIGURE_HINTS=1
+
+# Define to avoid flattening internal contents of tar files
+# COMP_TAR_INTERNAL_PATHS=1
+
+# If this shell is interactive, turn on programmable completion enhancements.
+# Any completions you add in ~/.bash_completion are sourced last.
+# case $- in
+#   *i*) [[ -f /etc/bash_completion ]] && . /etc/bash_completion ;;
+# esac
+
+
+# History Options
+# ###############
+
+# Don't put duplicate lines in the history.
+# export HISTCONTROL="ignoredups"
+
+# Ignore some controlling instructions
+# HISTIGNORE is a colon-delimited list of patterns which should be excluded.
+# The '&' is a special pattern which suppresses duplicate entries.
+# export HISTIGNORE=$'[ \t]*:&:[fb]g:exit'
+# export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
+
+# Whenever displaying the prompt, write the previous line to disk
+# export PROMPT_COMMAND="history -a"
+
+
+# Aliases
+# #######
+
+# Some example alias instructions
+# If these are enabled they will be used instead of any instructions
+# they may mask.  For example, alias rm='rm -i' will mask the rm
+# application.  To override the alias instruction use a \ before, ie
+# \rm will call the real rm not the alias.
+
+# Interactive operation...
+# alias rm='rm -i'
+# alias cp='cp -i'
+# alias mv='mv -i'
+
+# Default to human readable figures
+# alias df='df -h'
+# alias du='du -h'
+
+# Misc :)
+# alias less='less -r'                          # raw control characters
+# alias whence='type -a'                        # where, of a sort
+# alias grep='grep --color'                     # show differences in colour
+
+# Some shortcuts for different directory listings
+# alias ls='ls -hF --color=tty'                 # classify files in colour
+# alias dir='ls --color=auto --format=vertical'
+# alias vdir='ls --color=auto --format=long'
+# alias ll='ls -l'                              # long list
+# alias la='ls -A'                              # all but . and ..
+# alias l='ls -CF'                              #
+
+
+# Functions
+# #########
+
+# Some example functions
+# function settitle() { echo -ne "\e]2;$@\a\e]1;$@\a"; }
+
+export PS1="[\u@\h: \w] "
+PATH=~/bin:$PATH
+
+export CVSROOT=:ext:tbrannon@cvs.vwh.net:/cvsroot
+export CVS_RSH=ssh
+
+alias normal-emacs="~/wares/emacs/in-place/bin/normal-emacs"
