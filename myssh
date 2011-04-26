@@ -8,6 +8,9 @@ use Tie::IxHash;
 use local::lib '~/bin';
 use MySSH;
 
+#use Data::Dumper;
+#die Dumper(\%INC);
+
 
 my %user;
 my $user  = Tie::IxHash->new
@@ -32,7 +35,9 @@ sub printchoices {
   print "---------\n";
 
   for my $i (@user_i) {
-      printf "[$i] %s\n" , $user->Keys($i) ;
+      my $host  = $user->Values($i) ;
+      my $user  = $user->Keys($i);
+      printf "[$i] %s@%s\n" , $user, $host;
   }
 }
 
