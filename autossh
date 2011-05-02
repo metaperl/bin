@@ -3,8 +3,8 @@
 # You should run this with bash
 # Uploads your id_rsa.pub to the specified host, wrapped for readability
 
-USER=computer
-HOSTNAME=192.168.1.50
+USER=schemelab
+HOSTNAME=li2-168.members.linode.com
 
 if [ ! -r "${HOME}/.ssh/id_rsa.pub" ]; then
  ssh-keygen -t rsa -b 2048
