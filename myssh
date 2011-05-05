@@ -63,7 +63,7 @@ print $sshstr, "\n" ;
 if ($ENV{DISPLAY}) {
     system "xterm -title '$sshstr' -e 'ssh -Y $sshstr' &" ;
 } else {
-    exec 'ssh', '-C', '-A', '-X', $sshstr, '&' ;
+    exec 'ssh', '-A', '-X', $sshstr, '&' ;
 }
 
 

@@ -1,0 +1,9 @@
+#!/bin/bash -x
+
+WINDIR=/mnt/hgfs/host-c/Users/thequietcenter/Downloads
+LINDIR=~/Downloads
+
+LASTFILE=`ls -t /mnt/hgfs/host-c/Users/thequietcenter/Downloads/ | head -1`
+mv $WINDIR/$LASTFILE $LINDIR
+
+ls -larth $LINDIR
