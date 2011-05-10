@@ -1,5 +1,6 @@
 #!/bin/bash -x
 
+
 WINDIR=/mnt/hgfs/host-c/Users/thequietcenter/Downloads
 LINDIR=~/Downloads
 
