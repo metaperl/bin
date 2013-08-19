@@ -5,7 +5,7 @@
 emacs --debug-init &
 
 # PERFORCE
-~/exe/p4v-2013.1.611503/bin/pv4 &
+~/exe/p4v-2013.1.611503/bin/p4v &
 
 # PYCHARM
 ~/exe/pycharm-2.7.3/bin/pycharm.sh &
