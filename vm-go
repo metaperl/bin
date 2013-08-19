@@ -1,0 +1,11 @@
+#!/bin/bash -x
+
+
+# EMACS
+emacs --debug-init &
+
+# PERFORCE
+~/exe/p4v-2013.1.611503/bin/pv4 &
+
+# PYCHARM
+~/exe/pycharm-2.7.3/bin/pycharm.sh &
