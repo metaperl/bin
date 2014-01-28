@@ -1,0 +1,5 @@
+#!/bin/bash -x
+
+
+cd ~/Documents/Programming/cex.io
+./main.py withdraw multibit
