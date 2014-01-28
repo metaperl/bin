@@ -1,0 +1,4 @@
+#!/bin/bash -x
+
+
+killall -v firefox-bin
