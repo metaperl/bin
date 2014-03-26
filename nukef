@@ -2,3 +2,5 @@
 
 
 killall -v firefox-bin
+
+# ps -ef | grep firefox | grep -v grep | awk '{print $2}' | xargs kill -9

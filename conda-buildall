@@ -1,0 +1,17 @@
+#!/usr/bin/env bash -x
+
+ANACONDA=~/Documents/Programming/anaconda/anaconda
+
+PKG=$(conda build $1 | tee /dev/tty | grep "BUILD END:" | cut -f3 -d' ')
+
+PLATFORMS="linux-64 linux-32 win-64 win-32"
+
+for PLATFORM in $PLATFORMS
+do
+   mkdir -p $ANACONDA/conda-bld/$PLATFORM
+   conda convert \
+      -f $ANACONDA/conda-bld/osx-64/$PKG.tar.bz2 \
+      -p $PLATFORM  \
+      -o $ANACONDA/conda-bld/$PLATFORM;
+   binstar upload $ANACONDA/conda-bld/$PLATFORM/$PKG.tar.bz2;
+done
