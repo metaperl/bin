@@ -1,0 +1,5 @@
+#!/bin/bash -x
+
+
+cd ~/Documents/Programming/blgm
+./main.py rollup

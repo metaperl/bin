@@ -2,27 +2,20 @@
 
 use strict;
 
-
+use List::MoreUtils;
 use Tie::IxHash;
 
-use local::lib '~/.ssh';
+use local::lib '~/bin';
 use MySSH;
 
+#use Data::Dumper;
+#die Dumper(\%INC);
 
-my %user;
-my $user  = Tie::IxHash->new
-    (
-     %MySSH::user
-    ) ;
+my @sshstr;
 
 
-my @user_i = $user->Indices ($user->Keys) ;
-
-
-sub ssh_string {
-  my $host = shift;
-  my $user = $user->FETCH($host);
-  sprintf "%s@%s", $user, $host
+sub gethosts {
+    List::MoreUtils::natatime 2, @MySSH::user;
 }
 
 sub printchoices {
@@ -31,8 +24,12 @@ sub printchoices {
   print "ssh hosts\n";
   print "---------\n";
 
-  for my $i (@user_i) {
-      printf "[$i] %s\n" , $user->Keys($i) ;
+  my $iterator = gethosts;
+  my $i;
+  while (my ($user,$host) = $iterator->()) {
+      my $sshstr = sprintf '%s@%s' , $user, $host;
+      printf "[%d] %s\n", $i++, $sshstr;
+      push @sshstr, $sshstr;
   }
 }
 
@@ -54,21 +51,19 @@ sub mainloop {
   {
     printchoices;
     my $c = getchoice ;
-    return $c if $c =~ /^\d+$/ and $c >= 0 and $c <= $#user_i  ;
+    return $c if $c =~ /^\d+$/ and $c >= 0 and $c <= $#MySSH::user ;
     redo;
   }
 }
 
-my $c = mainloop;
-my $host = $user->Keys($c);
-my $sshstr = ssh_string($host) ;
-
-
+my $choice = mainloop;
+my $sshstr = $sshstr[$choice];
 print $sshstr, "\n" ;
+
 if ($ENV{DISPLAY}) {
     system "xterm -title '$sshstr' -e 'ssh -Y $sshstr' &" ;
 } else {
-    exec 'ssh', '-C', '-A', '-X', $sshstr, '&' ;
+    exec 'ssh', '-A', '-X', $sshstr, '&' ;
 }
 
 

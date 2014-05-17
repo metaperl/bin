@@ -1,3 +1,0 @@
-#!/bin/bash -x
-
-wget --continue --input-file=wget-urls

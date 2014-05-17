@@ -1,0 +1,7 @@
+#!/bin/bash -x
+
+
+for SCRIPT in "cex blgm"
+do
+  ./$SCRIPT
+done

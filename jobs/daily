@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Compound Hourly Revshare
+cd ~/prg/compound-hrs; python go.py
+
+# Fill out contest entries
+cd ~/prg/splinter-sk;  python go.py
+
+# Click on ADIT ads
+osascript ~/prg/click-adit/safari.applescript

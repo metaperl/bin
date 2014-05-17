@@ -1,0 +1,4 @@
+#!/bin/bash -x
+
+sudo chmod -R 777 ~/.cpan
+echo "$HOME/.cpan"

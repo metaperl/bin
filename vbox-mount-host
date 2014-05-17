@@ -1,0 +1,2 @@
+mount -t vboxsf C_DRIVE /mnt/host/c
+mount -t vboxsf H_DRIVE /mnt/host/h

@@ -1,12 +1,12 @@
 package MySSH;
 
-our %user = (
-	     'li2-168.members.linode.com'   => 'schemelab',
-	     'natasha.regents.state.oh.us'  => 'tbrannon',
+our @user = (
 
-	     'lnc.usc.edu'                 => 'brannon',
-	     'perlmonk.org'                => 'metaperl',
-	    ) ;
+    schemelab => 'li2-168.members.linode.com',
+    computer => 'test.bioscriptrx.com',
+    root => 'test.bioscriptrx.com' 
+
+    ) ;
 
 
 1;
