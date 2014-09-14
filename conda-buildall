@@ -13,5 +13,6 @@ do
       -f $ANACONDA/conda-bld/osx-64/$PKG.tar.bz2 \
       -p $PLATFORM  \
       -o $ANACONDA/conda-bld/$PLATFORM;
+   binstar register $ANACONDA/conda-bld/$PLATFORM/$PKG.tar.bz2;
    binstar upload $ANACONDA/conda-bld/$PLATFORM/$PKG.tar.bz2;
 done
