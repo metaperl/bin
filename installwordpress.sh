@@ -331,7 +331,7 @@ EOF
 	[ $? -ne "0" ] && exit 1
 	configure_wordpress
 	[ $? -ne "0" ] && exit 1
-	configure_apache
+	#configure_apache
 	[ $? -ne "0" ] && exit 1
 
 else

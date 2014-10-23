@@ -1,0 +1,4 @@
+#!/bin/bash -x
+
+
+du / 2> /dev/null | sort -r -n | head -40
