@@ -1,0 +1,4 @@
+cd
+. ./nagare-home/bin/activate
+cd mydev
+pwd
