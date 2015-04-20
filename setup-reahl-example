@@ -1,0 +1,10 @@
+#!/bin/bash -x
+
+
+reahl setup -- develop -N
+
+reahl-control createdbuser etc
+reahl-control createdb etc
+reahl-control createdbtables etc
+
+reahl serve etc

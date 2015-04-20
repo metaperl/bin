@@ -1,1 +1,3 @@
 export PATH="/home/tebranno/install/anaconda/bin:$PATH"
+
+echo "Now run `prep-reahl` next."
