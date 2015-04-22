@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
+
+export PATH="/home/tebranno/install/anaconda/bin:$PATH"
 source activate /home/tebranno/reahl-home
-
-
 echo "now cd to reahl-dev"
