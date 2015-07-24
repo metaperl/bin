@@ -1,0 +1,4 @@
+#!/bin/bash -x
+
+git commit -a -m commit
+git push

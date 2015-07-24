@@ -1,0 +1,6 @@
+#!/bin/bash -x
+
+
+sudo python setup.py install --record files.txt
+# inspect files.txt to make sure it looks ok. Then in bash:
+tr '\n' '\0' < files.txt | xargs -0 rm -f --

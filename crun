@@ -1,0 +1,8 @@
+#!/bin/bash -x
+
+source ~/.bash_profile
+
+echo "CMDLINE: $@"
+echo "PATH: $PATH"
+
+eval $@

@@ -1,0 +1,17 @@
+#!/bin/bash -x
+
+
+cd $1
+
+reahl setup -- develop -N
+
+reahl-control createdbuser etc
+reahl-control createdb etc
+reahl-control createdbtables etc
+
+reahl serve etc
+
+reahl-control dropdb etc
+reahl setup -- develop -N --uninstall
+
+reahl listexamples
