@@ -1,0 +1,17 @@
+#!/bin/bash
+
+F=/tmp/diskreport.dat
+
+df > $F
+
+echo "----------------------------------------------" >> $F
+
+du /var  / 2> /dev/null | sort -nr | head -500  >> $F
+
+echo "----------------------------------------------" >> $F
+
+du /home / 2> /dev/null | sort -nr | head -500  >> $F
+
+
+
+mail -s 'RSW Disk Report' metaperl@gmail.com < $F
