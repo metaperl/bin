@@ -1,7 +1,12 @@
+#!/bin/bash
+
+# Run Leela Go Program on last downloaded game
+# Runs on Cygwin (thank you redhat).
+
 DOWNLOADS=/c/Users/Owner/Downloads/
 
 LAST_GAME=`ls -arth c:/Users/Owner/Downloads/*.sgf | tail -1`
 
-LEELA=/c/Users/Owner/AppData/Local/Programs/Leela/Leela0110.exe
+LEELA=/cygdrive/c/Users/Owner/AppData/Local/Programs/Leela/Leela0110.exe
 
 $LEELA $LAST_GAME
